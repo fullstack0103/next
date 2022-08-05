@@ -11,8 +11,6 @@ export const Home = ({ homeState }) => {
     console.log('address')
   }
 
-  console.log(homeState)
-
   return (
     <>
       <HeroContainer bgimage='/home-hero.webp'>

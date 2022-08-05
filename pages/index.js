@@ -16,7 +16,7 @@ export default function Home({homeState}) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`https://apiv4.ordering.co/v400/en/reactdemo/pages/originalHomeContent`)
+  const res = await fetch(`https://apiv4.ordering.co/v400/en/luisv4/pages/page_speed`)
   const data = await res.json()
 
   // Pass data to the page via props
