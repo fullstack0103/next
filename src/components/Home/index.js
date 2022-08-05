@@ -1,11 +1,33 @@
 import {
-  Container
+  HeroContainer,
+  ContentWrapper,
+  Title,
+  Slogan,
+  WrapInput
 } from './styles'
 
 export const Home = () => {
+  const handleAddressInput = () => {
+    console.log('address')
+  }
+
   return (
-    <Container>
-      <h1>Next js</h1>
-    </Container>
+    <HeroContainer bgimage='/home-hero.jpg'>
+      <ContentWrapper>
+        <div>
+          <Title>All We need is Food.</Title>
+          <Slogan>Let us start to order food now</Slogan>
+          <WrapInput onClick={handleAddressInput} withIcon>
+            <p>What is your address?</p>
+          </WrapInput>
+          <button
+            name='find-business'
+            onClick={() => console.log('find')}
+          >
+            Find businesses
+          </button>
+        </div>
+      </ContentWrapper>
+    </HeroContainer>
   )
 }
