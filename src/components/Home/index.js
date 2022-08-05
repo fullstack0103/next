@@ -12,7 +12,7 @@ export const Home = () => {
   }
 
   return (
-    <HeroContainer bgimage='/home-hero.jpg'>
+    <HeroContainer bgimage='/home-hero.webp'>
       <ContentWrapper>
         <div>
           <Title>All We need is Food.</Title>
