@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Home as HomeController } from '../src/components/Home'
 
-export default function Home({homeState}) {
+export default function Home({homeState, footerState}) {
   return (
     <>
       <Head>
@@ -10,6 +10,14 @@ export default function Home({homeState}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeController homeState={homeState} />
+      {
+        footerState?.result?.body && (
+          <div dangerouslySetInnerHTML={{
+            __html: footerState?.result?.body
+          }}
+          />
+        )
+      }
     </>
   )
 }
@@ -19,6 +27,9 @@ export async function getServerSideProps() {
   const res = await fetch(`https://apiv4.ordering.co/v400/en/luisv4/pages/page_speed`)
   const data = await res.json()
 
+  const res1 = await fetch(`https://apiv4.ordering.co/v400/en/luisv4/pages/footer`)
+  const data1 = await res.json()
+
   // Pass data to the page via props
-  return { props: { homeState: data } }
+  return { props: { homeState: data, footerState: data1 } }
 }
